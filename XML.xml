@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hra xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XMLSchema.xsd">
+  <ucet>
+    <prezdivka>Player1</prezdivka>
+    <jazyk>Angličtina</jazyk>
+    <tutorial enabled="false"/>
+    <autosave enabled="true"/>
+    <oblibeny_tym>RealMadrid</oblibeny_tym>
+  </ucet>
+
+  <nastaveni_hry>
+    <obraz>
+      <rozliseni>1980x1080</rozliseni>
+      <cela_obrazovka>ANO</cela_obrazovka>
+      <kvalita_vykreslovani>Nízká</kvalita_vykreslovani>
+      <snimky_za_sekundu>30</snimky_za_sekundu>
+      <moznost_MSAA>2x</moznost_MSAA>
+      <gamma value="30"/>
+      <vertikalni_sync enabled="true"/>
+      <specialni_efekty enabled="false"/>
+    </obraz>
+    <zvuk_hry>str1234</zvuk_hry>
+    <zapas>
+      <delka_polocasu>4min</delka_polocasu>
+      <uroven_obtiznosti>Nízká</uroven_obtiznosti>
+      <rychlost_hry>Nízká</rychlost_hry>
+      <mic>Nike</mic>
+    </zapas>
+    <kamera>
+      <typ_kamery>Teleobjektiv</typ_kamery>
+      <vyska_kamery>5</vyska_kamery>
+      <priblizeni_kamery>5</priblizeni_kamery>
+      <rychlost_kamery>8</rychlost_kamery>
+      <otaceni_kamery>1</otaceni_kamery>
+    </kamera>
+    <zobrazeni>
+      <HUD>Popis s jménem</HUD>
+      <zobrazeni_casu enabled="true"/>
+      <zobrazeni_skore enabled="true"/>
+      <radar enabled="true"/>
+    </zobrazeni>
+    <Pravidla>
+      <zraneni enabled="true"/>
+      <ofsajdy enabled="true"/>
+      <udelovani_karet enabled="true"/>
+      <hra_rukou enabled="false"/>
+    </Pravidla>
+    <Zvuk>
+      <jazyk_komentare>Angličtina</jazyk_komentare>
+      <vedlejsi_komentator enabled="false"/>
+      <komentar>5</komentar>
+      <hlasatel>5</hlasatel>
+      <volani_hracu>10</volani_hracu>
+      <zvukove_efekty>8</zvukove_efekty>
+      <hlasitost_divaku>6</hlasitost_divaku>
+      <hudba>3</hudba>
+    </Zvuk>
+    <Uzivatelske_nastaveni_hry>
+      <rychlost_sprintu>50</rychlost_sprintu>
+      <zrychleni>50</zrychleni>
+      <mira_nepresnosti_strel>50</mira_nepresnosti_strel>
+      <cetnost_chybnych_nahravek>80</cetnost_chybnych_nahravek>
+      <rychlost_strely>60</rychlost_strely>
+      <rychlost_nahravky>50</rychlost_nahravky>
+      <cetnost_zraneni>40</cetnost_zraneni>
+      <zavaznost_zraneni>100</zavaznost_zraneni>
+      <schopnosti_brankare>20</schopnosti_brankare>
+      <drzeni_pozice_hrace>50</drzeni_pozice_hrace>
+      <mira_chybovosti_zpracovani_mice>60</mira_chybovosti_zpracovani_mice>
+    </Uzivatelske_nastaveni_hry>
+  </nastaveni_hry>
+</hra>

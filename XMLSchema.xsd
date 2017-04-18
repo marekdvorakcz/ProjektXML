@@ -1,0 +1,424 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+   <xs:element name="hra">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="ucet">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="prezdivka">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="[a-zA-Z0-9]{0,16}" />
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:element>
+                     <xs:element name="jazyk">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:enumeration value="Angličtina" />
+                              <xs:enumeration value="Čeština" />
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:element>
+                     <xs:element name="tutorial">
+                        <xs:complexType>
+                           <xs:attribute name="enabled" type="xs:string" />
+                        </xs:complexType>
+                     </xs:element>
+                     <xs:element name="autosave">
+                        <xs:complexType>
+                           <xs:attribute name="enabled" type="xs:string" />
+                        </xs:complexType>
+                     </xs:element>
+                     <xs:element name="oblibeny_tym">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="[a-zA-Z0-9]{0,16}" />
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:element>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element name="nastaveni_hry">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="obraz">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element name="rozliseni">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                       <xs:enumeration value="1980x1080" />
+                                       <xs:enumeration value="1600x900" />
+                                       <xs:enumeration value="1280x1024" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="cela_obrazovka">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                       <xs:enumeration value="ANO" />
+                                       <xs:enumeration value="NE" />
+                                       <xs:enumeration value="V okně" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="kvalita_vykreslovani">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                       <xs:enumeration value="Nízká" />
+                                       <xs:enumeration value="Střední" />
+                                       <xs:enumeration value="Vysoká" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="snimky_za_sekundu">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                       <xs:enumeration value="30" />
+                                       <xs:enumeration value="60" />
+                                       <xs:enumeration value="Neomezeno" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="moznost_MSAA">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                       <xs:enumeration value="2x" />
+                                       <xs:enumeration value="4x" />
+                                       <xs:enumeration value="Vypnuto" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="gamma">
+                                 <xs:complexType>
+                                    <xs:attribute name="value" type="xs:int" />
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element name="vertikalni_sync">
+                                 <xs:complexType>
+                                    <xs:attribute name="enabled" type="xs:string" />
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element name="specialni_efekty">
+                                 <xs:complexType>
+                                    <xs:attribute name="enabled" type="xs:string" />
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                     <xs:element name="zvuk_hry" type="xs:string" />
+                     <xs:element name="zapas">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element name="delka_polocasu">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                       <xs:enumeration value="4min" />
+                                       <xs:enumeration value="10min" />
+                                       <xs:enumeration value="15min" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="uroven_obtiznosti">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                       <xs:enumeration value="Nízká" />
+                                       <xs:enumeration value="Střední" />
+                                       <xs:enumeration value="Vysoká" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="rychlost_hry">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                       <xs:enumeration value="Nízká" />
+                                       <xs:enumeration value="Střední" />
+                                       <xs:enumeration value="Vysoká" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="mic">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                       <xs:enumeration value="Nike" />
+                                       <xs:enumeration value="Adidas" />
+                                       <xs:enumeration value="Puma" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                     <xs:element name="kamera">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element name="typ_kamery">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                       <xs:enumeration value="Teleobjektiv" />
+                                       <xs:enumeration value="Celé hřiště" />
+                                       <xs:enumeration value="Kooperace" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="vyska_kamery">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                       <xs:minInclusive value="1" />
+                                       <xs:maxInclusive value="10" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="priblizeni_kamery">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                       <xs:minInclusive value="1" />
+                                       <xs:maxInclusive value="10" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="rychlost_kamery">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                       <xs:minInclusive value="1" />
+                                       <xs:maxInclusive value="10" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="otaceni_kamery">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                       <xs:minInclusive value="1" />
+                                       <xs:maxInclusive value="10" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                     <xs:element name="zobrazeni">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element name="HUD">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                       <xs:enumeration value="Popis s jménem" />
+                                       <xs:enumeration value="Ukazatel" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="zobrazeni_casu">
+                                 <xs:complexType>
+                                    <xs:attribute name="enabled" type="xs:string" />
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element name="zobrazeni_skore">
+                                 <xs:complexType>
+                                    <xs:attribute name="enabled" type="xs:string" />
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element name="radar">
+                                 <xs:complexType>
+                                    <xs:attribute name="enabled" type="xs:string" />
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                     <xs:element name="Pravidla">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element name="zraneni">
+                                 <xs:complexType>
+                                    <xs:attribute name="enabled" type="xs:string" />
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element name="ofsajdy">
+                                 <xs:complexType>
+                                    <xs:attribute name="enabled" type="xs:string" />
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element name="udelovani_karet">
+                                 <xs:complexType>
+                                    <xs:attribute name="enabled" type="xs:string" />
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element name="hra_rukou">
+                                 <xs:complexType>
+                                    <xs:attribute name="enabled" type="xs:string" />
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                     <xs:element name="Zvuk">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element name="jazyk_komentare">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                       <xs:enumeration value="Angličtina" />
+                                       <xs:enumeration value="Čeština" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="vedlejsi_komentator">
+                                 <xs:complexType>
+                                    <xs:attribute name="enabled" type="xs:string" />
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element name="komentar">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                       <xs:minInclusive value="1" />
+                                       <xs:maxInclusive value="10" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="hlasatel">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                       <xs:minInclusive value="1" />
+                                       <xs:maxInclusive value="10" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="volani_hracu">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                       <xs:minInclusive value="1" />
+                                       <xs:maxInclusive value="10" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="zvukove_efekty">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                       <xs:minInclusive value="1" />
+                                       <xs:maxInclusive value="10" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="hlasitost_divaku">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                       <xs:minInclusive value="1" />
+                                       <xs:maxInclusive value="10" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="hudba">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                       <xs:minInclusive value="1" />
+                                       <xs:maxInclusive value="10" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                     <xs:element name="Uzivatelske_nastaveni_hry">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element name="rychlost_sprintu">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                       <xs:minInclusive value="1" />
+                                       <xs:maxInclusive value="100" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="zrychleni">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                       <xs:minInclusive value="1" />
+                                       <xs:maxInclusive value="100" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="mira_nepresnosti_strel">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                       <xs:minInclusive value="1" />
+                                       <xs:maxInclusive value="100" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="cetnost_chybnych_nahravek">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                       <xs:minInclusive value="1" />
+                                       <xs:maxInclusive value="100" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="rychlost_strely">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                       <xs:minInclusive value="1" />
+                                       <xs:maxInclusive value="100" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="rychlost_nahravky">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                       <xs:minInclusive value="1" />
+                                       <xs:maxInclusive value="100" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="cetnost_zraneni">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                       <xs:minInclusive value="1" />
+                                       <xs:maxInclusive value="100" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="zavaznost_zraneni">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                       <xs:minInclusive value="1" />
+                                       <xs:maxInclusive value="100" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="schopnosti_brankare">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                       <xs:minInclusive value="1" />
+                                       <xs:maxInclusive value="100" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="drzeni_pozice_hrace">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                       <xs:minInclusive value="1" />
+                                       <xs:maxInclusive value="100" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="mira_chybovosti_zpracovani_mice">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                       <xs:minInclusive value="1" />
+                                       <xs:maxInclusive value="100" />
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

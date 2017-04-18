@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Dokumentace semestrální práce z předmětu Značkovací jazyky</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<header>
+			<h1>Dokumentace semestrální práce z předmětu Značkovací jazyky</h1>
+		</header>
+		
+		<nav id="nav">
+			<h2>Obsah</h2>
+			<ul>
+				<li><a href="#nav">Obsah s odkazy </a></li>
+				<li><a href="#introduction">Úvod</a></li>
+				<li><a href="#methodology">Metodika</a></li>
+				<li><a href="#element_desc">Popis elementů a atributů</a></li>
+				<li><a href="#transform_desc">Popis transformace</a></li>
+				<li><a href="#summary">Závěr</a></li>
+				<li><a href="#footer">Zápatí</a></li>
+			</ul>
+		</nav>
+		
+		<main> 
+			<article>
+				<section id="introduction">
+					<h2>Úvod</h2>
+					<p>
+                                                Tato semestrální práce se zabývá tvorbou XML dokumentu popisující soubor, do kterého aplikace ukládá svá nastavení. Součástí je také tvorba 
+                                                XSD schéma, XSL transformace do JSON a tato dokumentace. Dokument byl tvořen jako konfigurační soubor fotbalové počítačové hry. Inspirací 
+                                                mi byla hra FIFA15 od Electronic Arts.
+					</p>
+				</section>      
+				
+				<section id="methodology">
+					<h2>Metodika</h2>
+					<p>Všechny dokumenty byly vytvořeny v programu <i>NetBeans IDE 8.2</i>.</p>
+					<p>
+						Nejprve jsem vytvořil XML dokument se jmény elementů a atributů. Ten jsem následně konvertoval do XSD pomocí webové aplikace 
+                                                <a href="http://www.freeformatter.com/xsd-generator.html">Freeformater</a> v designu Russian Doll (zachovává stejnou strukturu jako zadnaý XML dokument).
+                                                Tento XSD dokument byl pak ručně doopraven a doplněn o restrikce na datové typy a také byla upravena celková struktura dokumentu do finální podoby.
+					</p>
+					<p>
+						Finální XML bylo vygenerováno na základě v předchozím kroku vytvořeného XSD pomocí webové aplikace <a href="http://xsd2xml.com">XSD2XML</a>. Některé hodnoty byly manuálně změněny.
+					</p>
+
+					<p>
+						Validita těchto dvou dokumentů byla zkontrolována pomocí <a href="http://www.utilities-online.info/xsdvalidation/">webového validátoru </a>. a zároveň
+                                                NetBeans IDE 8.2. Dále bylo zkontrolováno, že XML dokument odpovídá XSD schématu.
+					</p>
+
+					<p>
+						Pro XSL transformaci do JSON byl nejprve z XML vygenerován JSON soubor, který byl použit jako základ pro transformaci. Všechny elementy, které obsahovaly pouze jeden atribut a žádnývnořený element, byly přejmenovány podle vzoru <i>element-atribut</i>. Kategorie nastavení vyplícající ze struktury dokumentu byly zabaleny do <i>for-each</i> cyklů, pro zkrácení zápisu adres elementů. Validita JSON souboru vytvořeného transformací byla ověřena na <a href="http://json.parser.online.fr">webového validátoru Json Parser Online</a>
+					</p>
+
+					<p>
+						Celý projekt byl nahrán na <a href="">GitHub</a>.
+					</p>
+				</section>
+				
+				<section id="element_desc">
+					<h2>Popis elementů a atributů</h2>
+
+					<table border="1">
+						<tr>
+							<th>Element/atribut</th>
+							<th>Popis</th>
+						</tr>
+						<tr>
+							<td>ucet</td>
+							<td>Vlastní účet ve hře</td>
+						</tr>
+                                                <tr>
+							<td>prezdivka</td>
+							<td>Nastavení vlastní přezdívky</td>
+						</tr>
+						<tr>
+							<td>jazyk</td>
+							<td>Nastavení jazyku ve hře</td>
+						</tr>
+						<tr>
+							<td>tutorial</td>
+							<td>Hra provede hráče ovládáním a funkcionalitou hry</td>
+						</tr>
+						<tr>
+							<td>autosave</td>
+							<td>Automatické ukládání hry</td>
+						</tr>
+						<tr>
+							<td>nastaveni_hry</td>
+							<td>Nastavení celý hry</td>
+						</tr>
+						<tr>
+							<td>obraz</td>
+							<td>Nastavení grafiky hry</td>
+						</tr>
+						<tr>
+							<td>rozliseni</td>
+							<td>Zvolení rozlišení hry</td>
+						</tr>
+						<tr>
+							<td>cela_obrazovka</td>
+							<td>Nastavení zobrazování hry(Celá obrazovka/V okně)</td>
+						</tr>
+						<tr>
+							<td>kvalita_vykreslovani</td>
+							<td>Kvalita herního vykreslení obrazu</td>
+						</tr>
+						<tr>
+							<td>snimky_za_sekundu</td>
+							<td>Toto nastavení omezí frekvenci snímků ve hře</td>
+						</tr>
+						<tr>
+							<td>moznost_MSAA</td>
+							<td>MSAA zlepšuje vyhlazování obrazu za cenu snížení snímků za sekundu</td>
+						</tr>
+						<tr>
+							<td>gamma</td>
+							<td>Nastavení Gamma obrazovky</td>
+						</tr>
+						<tr>
+							<td>vertikalni_sync</td>
+							<td>Zapnutí/vypnutí vertikální synchronizace</td>
+						</tr>
+						<tr>
+							<td>specialni_efekty</td>
+							<td>Zapnutí/vypnutí speciálních efektů</td>
+						</tr>
+						<tr>
+							<td>zvuk_hry</td>
+							<td>Nastavení zvukového rozhraní</td>
+						</tr>
+						<tr>
+							<td>zapas</td>
+							<td>Nastavení zápasu</td>
+						</tr>
+                                                <tr>
+							<td>delka_polocasu</td>
+							<td>Doba jednoho poločasu hry</td>
+						</tr>
+						<tr>
+							<td>uroven_obtiznosti</td>
+							<td>Nastavení kvality počítače proti kterému hrajeme</td>
+						</tr>
+						<tr>
+							<td>rychlost_hry</td>
+							<td>Celková rychlost hry</td>
+						</tr>
+						<tr>
+							<td>mic</td>
+							<td>Výběr značky míče, se kterým se bude hrát</td>
+						</tr>
+						<tr>
+							<td>kamera</td>
+							<td>Kamerové nastavení</td>
+						</tr>
+						<tr>
+							<td>typ_kamery</td>
+							<td>Pozice kamery ze které budeme sledovat zápas</td>
+						</tr>
+						<tr>
+							<td>vyska_kamery</td>
+							<td>Vzdálenost kamery od hřiště</td>
+						</tr>
+						<tr>
+							<td>priblizeni_kamery</td>
+							<td>Nastavení Zoomu kamery</td>
+						</tr>
+						<tr>
+							<td>rychlost_kamery</td>
+							<td>Rychlost s jakou se bude kamera pohybovat při hře</td>
+						</tr>
+						<tr>
+							<td>otaceni_kamery</td>
+							<td>Nastavení jak moc se bude kamera otáčet</td>
+						</tr>
+						<tr>
+							<td>zobrazeni</td>
+							<td>Zobrazení prvků ve hře</td>
+						</tr>
+						<tr>
+							<td>HUD</td>
+							<td>Zvolení, zda během zápasu uvidíme ukazatel/jméno/obojí</td>
+						</tr>
+						<tr>
+							<td>zobrazeni_casu</td>
+							<td>Zapnutí/Vypnutí času ve hře</td>
+						</tr>
+						<tr>
+							<td>zobrazení_skore</td>
+							<td>Zapnutí/Vypnutí skore ve hře</td>
+						</tr>
+						<tr>
+							<td>radar</td>
+							<td>Zapnutí/vypnutí radaru. Rovněž možnost 2D/3D</td>
+						</tr>
+						<tr>
+							<td>Pravidla</td>
+							<td>Celková pravidla ve hře</td>
+						</tr>
+						<tr>
+							<td>zraneni</td>
+							<td>Zapnutí/vypnutí možného zranění hráče</td>
+						</tr>
+						<tr>
+							<td>ofsajdy</td>
+							<td>Zapnutí/vypnutí ofsajdů ve hře</td>
+						</tr>
+						<tr>
+							<td>udelovani_karet</td>
+							<td>Zapnutí/vypnutí možného udělování karet</td>
+						</tr>
+						<tr>
+							<td>hra_rukou</td>
+							<td>Zapnutí/vypnutí písknutí faulu za dotyk ruky</td>
+						</tr>
+						<tr>
+							<td>Zvuk</td>
+							<td>Celkové nastavení zvuků ve hře</td>
+						</tr>
+						<tr>
+							<td>jazyk_komentare</td>
+							<td>Vyber jazyka, kterým bude komentátor mluvit</td>
+						</tr>
+						<tr>
+							<td>vedlejsi_komentator</td>
+							<td>Zapnutí/vypnutí vedlejšího komentátora</td>
+						</tr>
+						<tr>
+							<td>komentar</td>
+							<td>Hlasitost komentátora 1(min)-10(max)</td>
+						</tr>
+						<tr>
+							<td>hlasatel</td>
+							<td>Hlasitost hlasatele 1(min)-10(max)</td>
+						</tr>
+						<tr>
+							<td>volani_hracu</td>
+							<td>Hlasitost pokřikování hráčů na hřišti 1(min)-10(max)</td>
+						</tr>
+						<tr>
+							<td>zvukove_efekty</td>
+							<td>Hlasitost vedlejších efektů 1(min)-10(max)</td>
+						</tr>
+						<tr>
+							<td>hlasitost_divaku</td>
+							<td>Hlasitost zvuků diváků 1(min)-10(max)</td>
+						</tr>
+						<tr>
+							<td>hudba</td>
+							<td>Hlasitost hudby 1(min)-10(max)</td>
+						</tr>
+						<tr>
+							<td>Uzivatelske_nastaveni_hry</td>
+							<td>Uzivatel si sám nastaví atributy hráčů</td>
+						</tr>
+						<tr>
+							<td>rychlost_sprintu</td>
+							<td>Nastavení rychlosti sprintu hráče 1(min)-100(max)</td>
+						</tr>
+						<tr>
+							<td>zrychleni</td>
+							<td>Nastavení zrychlení hráče 1(min)-100(max)</td>
+						</tr>
+						<tr>
+							<td>mira_nepresnosti_strel</td>
+							<td>Nastavení nepřesnosti střel hráče 1(min)-100(max)</td>
+						</tr>
+                                                <tr>
+							<td>cetnost_chybnych_nahravek</td>
+							<td>Nastavení četnosti chybných nahrávek hráče 1(min)-100(max)</td>
+						</tr>
+                                                <tr>
+							<td>rychlost_strely</td>
+							<td>Nastavení rychlosti střely hráče 1(min)-100(max)</td>
+						</tr>
+                                                <tr>
+							<td>rychlost_nahravky</td>
+							<td>Nastavení rychlosti nahrávky hráče 1(min)-100(max)</td>
+						</tr>
+                                                <tr>
+							<td>cetnost_zraneni</td>
+							<td>Nastavení četnosti zranění hráče 1(min)-100(max)</td>
+						</tr>
+                                                <tr>
+							<td>zavaznost_zraneni</td>
+							<td>Nastavení závažnosti zranění hráče 1(min)-100(max)</td>
+						</tr>
+                                                <tr>
+							<td>schopnosti_brankare</td>
+							<td>Nastavení schopnosti brankáře 1(min)-100(max)</td>
+						</tr>
+                                                <tr>
+							<td>drzeni_pozice_hrace</td>
+							<td>Nastavení držení pozice hráče 1(min)-100(max)</td>
+						</tr>
+                                                <tr>
+							<td>mira_chybovosti_zpracovani_mice</td>
+							<td>Nastavení míry chybovosti zpracování míče u hráče 1(min)-100(max)</td>
+						</tr>
+					</table>
+				</section>
+				
+				<section id="transformation_desc">
+					<h2>Popis transformace</h2>
+
+					<h3>JSON</h3>
+					<p>
+						Data jsou transformována do JSON dokumentu. Jsou strukturována stejně jako výchozí XML soubor. Elementy s datovým typem <i>string</i> jsou zapsány v úvozovkách. Číselné datové typy a <i>boolean</i> jsou zapsnány bez úvozovek.
+					</p>
+				</section>
+				
+				<section id="summary">
+					<h2>Závěr</h2>
+					<p>
+						Jazyk XML je používán pro strukturované ukládání dat nebo při komunikaci mezi programy. Jeho výhodou je dobrá čitelnost a šikoké možnosti filtrování a omezování dat a datovýh typů. Práce s ním je také snadná, protože k jeho editaci stačí pouze textový editor.
+					</p>
+				</section>
+			</article>
+		</main>
+		
+		<footer id="footer">
+			<hr>
+			<table>
+				<tr>
+					<td>Autor:</td>
+					<td>Marek Dvořák</td>
+				</tr>
+				<tr>
+					<td>Cvičení:</td>
+					<td>Ponděli 14:00L (Lichý)</td>
+				</tr>
+			</table>
+		</footer>
+	</body>
+</html>
