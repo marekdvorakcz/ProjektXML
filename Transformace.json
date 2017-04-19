@@ -1,0 +1,37 @@
+
+        {
+            "Ucty":
+            [
+            
+            
+                        {
+				"ID": "4",
+                                "Prezdivka": "David999",
+				"Oblibeny_tym": "Chelsea"
+			},
+                        {
+				"ID": "3",
+                                "Prezdivka": "Jan30",
+				"Oblibeny_tym": "Arsenal"
+			},
+                        {
+				"ID": "2",
+                                "Prezdivka": "Karel15",
+				"Oblibeny_tym": "Juventus"
+			},
+                        {
+				"ID": "1",
+                                "Prezdivka": "Madrista7",
+				"Oblibeny_tym": "RealMadrid"
+			},
+                        {
+				"ID": "5",
+                                "Prezdivka": "Neymar11",
+				"Oblibeny_tym": "Barcelona"
+			}
+            ]
+        }
+            
+       
+    
+    

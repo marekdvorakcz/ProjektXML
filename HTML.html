@@ -36,7 +36,7 @@
 				
 				<section id="metodika">
 					<h2>Metodika</h2>
-					<p>Všechny dokumenty byly vytvořeny v programu <a href="https://https://netbeans.org/downloads/">NetBeans IDE 8.2</a>.</p>
+					<p>Všechny dokumenty byly vytvořeny v programu <a href="https://netbeans.org/downloads/">NetBeans IDE 8.2</a>.</p>
 					<p>
 						Nejprve jsem vytvořil XML dokument se jmény elementů a atributů. Ten jsem následně konvertoval do XSD pomocí webové aplikace 
                                                 <a href="http://www.freeformatter.com/xsd-generator.html">Freeformater</a> v designu Russian Doll (zachovává stejnou strukturu jako zadnaý XML dokument).
@@ -53,11 +53,12 @@
 					</p>
                                         
                                         <p>
-                                                Transformace
+                                                Poté jsem doplnil 5 záznamů do XML souboru a vytvořil XSL pro transformaci. Transformaci jsem uložil do JSON.
                                         </p>
 
 					<p>
-						Následně jsem vytvořil tento HTML dokument, opět za použití <a href="https://https://netbeans.org/downloads/">NetBeans IDE 8.2</a>.
+						Následně jsem vytvořil tento HTML dokument, opět za použití <a href="https://netbeans.org/downloads/">NetBeans IDE 8.2</a>.
+                                                Poté zkontrolována validace pomocí <a href="http://validator.webylon.info/">Validátoru</a>.
 					</p>
 
 					<p>
@@ -312,7 +313,9 @@
 					<h2>Popis transformace</h2>
 
 					<p>
-                                            
+                                            Transformace pomocí cyklu <code>for-each</code> vybere účty z XML. Konkrétně id, přezdívku a oblíbený tým.
+                                            Výsledné účty budou seřazeny abecedně podle přezdívek. Výsledný JSON jsem prověřil
+                                            <a href="https://jsonformatter.curiousconcept.com/#">JSON validátorem</a>.
 					</p>
 				</section>
 				
