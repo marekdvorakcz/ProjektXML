@@ -2,7 +2,7 @@
    <xs:element name="hra">
       <xs:complexType>
          <xs:sequence>
-            <xs:element name="ucet">
+            <xs:element name="ucet" maxOccurs="unbounded" minOccurs="0">
                <xs:complexType>
                   <xs:sequence>
                      <xs:element name="prezdivka">
@@ -38,6 +38,7 @@
                         </xs:simpleType>
                      </xs:element>
                   </xs:sequence>
+                  <xs:attribute type="xs:byte" name="id" use="required"/>
                </xs:complexType>
             </xs:element>
             <xs:element name="nastaveni_hry">
@@ -109,7 +110,6 @@
                            </xs:sequence>
                         </xs:complexType>
                      </xs:element>
-                     <xs:element name="zvuk_hry" type="xs:string" />
                      <xs:element name="zapas">
                         <xs:complexType>
                            <xs:sequence>
@@ -228,7 +228,7 @@
                            </xs:sequence>
                         </xs:complexType>
                      </xs:element>
-                     <xs:element name="Pravidla">
+                     <xs:element name="pravidla">
                         <xs:complexType>
                            <xs:sequence>
                               <xs:element name="zraneni">
@@ -254,7 +254,7 @@
                            </xs:sequence>
                         </xs:complexType>
                      </xs:element>
-                     <xs:element name="Zvuk">
+                     <xs:element name="zvuk">
                         <xs:complexType>
                            <xs:sequence>
                               <xs:element name="jazyk_komentare">
@@ -321,7 +321,7 @@
                            </xs:sequence>
                         </xs:complexType>
                      </xs:element>
-                     <xs:element name="Uzivatelske_nastaveni_hry">
+                     <xs:element name="uzivatelske_nastaveni_hry">
                         <xs:complexType>
                            <xs:sequence>
                               <xs:element name="rychlost_sprintu">

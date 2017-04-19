@@ -14,18 +14,18 @@
 			<h2>Obsah</h2>
 			<ul>
 				<li><a href="#nav">Obsah s odkazy </a></li>
-				<li><a href="#introduction">Úvod</a></li>
-				<li><a href="#methodology">Metodika</a></li>
-				<li><a href="#element_desc">Popis elementů a atributů</a></li>
-				<li><a href="#transform_desc">Popis transformace</a></li>
-				<li><a href="#summary">Závěr</a></li>
-				<li><a href="#footer">Zápatí</a></li>
+				<li><a href="#uvod">Úvod</a></li>
+				<li><a href="#metodika">Metodika</a></li>
+				<li><a href="#popis_elementu">Popis elementů a atributů</a></li>
+				<li><a href="#popis_transformace">Popis transformace</a></li>
+				<li><a href="#zaver">Závěr</a></li>
+				<li><a href="#paticka">Zápatí</a></li>
 			</ul>
 		</nav>
 		
 		<main> 
 			<article>
-				<section id="introduction">
+				<section id="uvod">
 					<h2>Úvod</h2>
 					<p>
                                                 Tato semestrální práce se zabývá tvorbou XML dokumentu popisující soubor, do kterého aplikace ukládá svá nastavení. Součástí je také tvorba 
@@ -34,25 +34,30 @@
 					</p>
 				</section>      
 				
-				<section id="methodology">
+				<section id="metodika">
 					<h2>Metodika</h2>
-					<p>Všechny dokumenty byly vytvořeny v programu <i>NetBeans IDE 8.2</i>.</p>
+					<p>Všechny dokumenty byly vytvořeny v programu <a href="https://https://netbeans.org/downloads/">NetBeans IDE 8.2</a>.</p>
 					<p>
 						Nejprve jsem vytvořil XML dokument se jmény elementů a atributů. Ten jsem následně konvertoval do XSD pomocí webové aplikace 
                                                 <a href="http://www.freeformatter.com/xsd-generator.html">Freeformater</a> v designu Russian Doll (zachovává stejnou strukturu jako zadnaý XML dokument).
                                                 Tento XSD dokument byl pak ručně doopraven a doplněn o restrikce na datové typy a také byla upravena celková struktura dokumentu do finální podoby.
 					</p>
 					<p>
-						Finální XML bylo vygenerováno na základě v předchozím kroku vytvořeného XSD pomocí webové aplikace <a href="http://xsd2xml.com">XSD2XML</a>. Některé hodnoty byly manuálně změněny.
+						Finální XML bylo vygenerováno na základě v předchozím kroku vytvořeného XSD pomocí webové aplikace <a href="http://xsd2xml.com">XSD2XML</a>.
+                                                Některé hodnoty byly manuálně změněny.
 					</p>
 
 					<p>
 						Validita těchto dvou dokumentů byla zkontrolována pomocí <a href="http://www.utilities-online.info/xsdvalidation/">webového validátoru </a>. a zároveň
                                                 NetBeans IDE 8.2. Dále bylo zkontrolováno, že XML dokument odpovídá XSD schématu.
 					</p>
+                                        
+                                        <p>
+                                                Transformace
+                                        </p>
 
 					<p>
-						Pro XSL transformaci do JSON byl nejprve z XML vygenerován JSON soubor, který byl použit jako základ pro transformaci. Všechny elementy, které obsahovaly pouze jeden atribut a žádnývnořený element, byly přejmenovány podle vzoru <i>element-atribut</i>. Kategorie nastavení vyplícající ze struktury dokumentu byly zabaleny do <i>for-each</i> cyklů, pro zkrácení zápisu adres elementů. Validita JSON souboru vytvořeného transformací byla ověřena na <a href="http://json.parser.online.fr">webového validátoru Json Parser Online</a>
+						Následně jsem vytvořil tento HTML dokument, opět za použití <a href="https://https://netbeans.org/downloads/">NetBeans IDE 8.2</a>.
 					</p>
 
 					<p>
@@ -60,7 +65,7 @@
 					</p>
 				</section>
 				
-				<section id="element_desc">
+				<section id="popis_elementu">
 					<h2>Popis elementů a atributů</h2>
 
 					<table border="1">
@@ -197,7 +202,7 @@
 							<td>Zapnutí/vypnutí radaru. Rovněž možnost 2D/3D</td>
 						</tr>
 						<tr>
-							<td>Pravidla</td>
+							<td>pravidla</td>
 							<td>Celková pravidla ve hře</td>
 						</tr>
 						<tr>
@@ -217,7 +222,7 @@
 							<td>Zapnutí/vypnutí písknutí faulu za dotyk ruky</td>
 						</tr>
 						<tr>
-							<td>Zvuk</td>
+							<td>zvuk</td>
 							<td>Celkové nastavení zvuků ve hře</td>
 						</tr>
 						<tr>
@@ -253,7 +258,7 @@
 							<td>Hlasitost hudby 1(min)-10(max)</td>
 						</tr>
 						<tr>
-							<td>Uzivatelske_nastaveni_hry</td>
+							<td>uzivatelske_nastaveni_hry</td>
 							<td>Uzivatel si sám nastaví atributy hráčů</td>
 						</tr>
 						<tr>
@@ -303,25 +308,26 @@
 					</table>
 				</section>
 				
-				<section id="transformation_desc">
+				<section id="popis_transformace">
 					<h2>Popis transformace</h2>
 
-					<h3>JSON</h3>
 					<p>
-						Data jsou transformována do JSON dokumentu. Jsou strukturována stejně jako výchozí XML soubor. Elementy s datovým typem <i>string</i> jsou zapsány v úvozovkách. Číselné datové typy a <i>boolean</i> jsou zapsnány bez úvozovek.
+                                            
 					</p>
 				</section>
 				
-				<section id="summary">
+				<section id="zaver">
 					<h2>Závěr</h2>
 					<p>
-						Jazyk XML je používán pro strukturované ukládání dat nebo při komunikaci mezi programy. Jeho výhodou je dobrá čitelnost a šikoké možnosti filtrování a omezování dat a datovýh typů. Práce s ním je také snadná, protože k jeho editaci stačí pouze textový editor.
+                                            V této semestrální práci jsem si vyzkoušel pracovat s XML. Nikdy předtím jsem s XML nepracoval, 
+                                            a proto to bylo pro mě poučné. Myslím, že XML v budoucnu ještě použiju. Nastavení fotbalové hry 
+                                            nebo kterékoliv jiné hry je mnohem obsáhlejší, ale z důvodu rozsahu semestrální práce jsem nastavení zkrátil.
 					</p>
 				</section>
 			</article>
 		</main>
 		
-		<footer id="footer">
+		<footer id="paticka">
 			<hr>
 			<table>
 				<tr>
